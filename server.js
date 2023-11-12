@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const express = require("express");
-const helmet = require("helmet");
 
 const cors = require("cors");
 const app = express();
@@ -11,7 +10,7 @@ const userRouter = require("./routes/userRoute");
 const chatRouter = require("./routes/chatRoute");
 const messageRouter = require("./routes/messageRoute");
 
-const allowedOrigins = ["https://chatapp-otari.onrender.com/"]; // Replace with your production app's domain
+const allowedOrigins = ["https://chatapp-otari.onrender.com"];
 
 const corsOptions = {
   origin: function (origin, callback) {
@@ -27,7 +26,7 @@ require("dotenv").config();
 const url = process.env.mongoDB;
 
 //My middlewares
-app.use(helmet());
+
 app.use(express.json());
 app.use(cors(corsOptions));
 
