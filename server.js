@@ -11,7 +11,7 @@ const userRouter = require("./routes/userRoute");
 const chatRouter = require("./routes/chatRoute");
 const messageRouter = require("./routes/messageRoute");
 
-const allowedOrigins = ["https://chatapp-otari.onrender.com"]; // Replace with your production app's domain
+const allowedOrigins = ["https://chatapp-otari.onrender.com/"]; // Replace with your production app's domain
 
 const corsOptions = {
   origin: function (origin, callback) {
