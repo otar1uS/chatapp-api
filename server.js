@@ -4,7 +4,7 @@ const helmet = require("helmet");
 
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 const userRouter = require("./routes/userRoute");
 const chatRouter = require("./routes/chatRoute");
 const messageRouter = require("./routes/messageRoute");
