@@ -10,25 +10,13 @@ const userRouter = require("./routes/userRoute");
 const chatRouter = require("./routes/chatRoute");
 const messageRouter = require("./routes/messageRoute");
 
-const allowedOrigins = ["https://chatapp-otari.onrender.com"];
-
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (allowedOrigins.includes(origin) || !origin) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-};
-
 require("dotenv").config();
 const url = process.env.mongoDB;
 
 //My middlewares
 
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use("/api/users", userRouter);
 app.use("/api/chat", chatRouter);
